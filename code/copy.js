@@ -16,7 +16,7 @@ path.exists(file1, function (exists) {
     fs.writeFile(file2, data, function (err) {
       if (err) throw err;
 
-      fs.readFile(file1, function (err, data) {
+      fs.readFile(file2, function (err, data) {
         if (err) throw err;
         console.log(data.toString());
       });

@@ -6,4 +6,5 @@ on [async.js](https://github.com/caolan/async).
 Licenses
 ========
 All demo code is Copyright 2012 Ryan Roemer. Released under MIT License.
+
 Impress.js is Copyright 2011-2012 Bartek Szopka. Released under MIT License.

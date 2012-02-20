@@ -114,8 +114,8 @@
         <div class="cont">
         <ul>
             <li>series</li>
-            <li>waterfall</li>
             <li>iterator</li>
+            <li>waterfall</li>
         </ul>
         </div>
     </div>
@@ -170,6 +170,31 @@
   <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// &quot;data&quot; now first arg.</span>
     <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">file2</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
   <span class="p">},</span>
+  <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file2</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+      <span class="nx">cb</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+    </div>
+
+    <div class="step slide" data-x="2750" data-y="4000" data-rotate="0" data-scale="1">
+        <div class="highlight"><pre><span class="kd">var</span> <span class="nx">readFile1</span> <span class="o">=</span> <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">,</span> <span class="nx">file1</span><span class="p">),</span>
+  <span class="nx">writeFile2</span> <span class="o">=</span> <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">,</span> <span class="nx">file2</span><span class="p">);</span>
+
+<span class="c1">// Using &quot;apply&quot; to curry.</span>
+<span class="nx">async</span><span class="p">.</span><span class="nx">waterfall</span><span class="p">([</span>
+  <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">path</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="nx">file1</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">exists</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">cb</span><span class="p">(</span><span class="nx">exists</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;No file!&quot;</span><span class="p">));</span>
+    <span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">readFile1</span><span class="p">,</span>  <span class="c1">// Use curried wrapper here.</span>
+  <span class="nx">writeFile2</span><span class="p">,</span> <span class="c1">// ... and here too.</span>
   <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file2</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>

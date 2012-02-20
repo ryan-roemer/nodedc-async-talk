@@ -277,9 +277,36 @@
         <h1>Everything Together</h1>
         <div class="cont">
         <ul>
-            <li>auto</li>
+            <li><b>auto</b>: dependency graphs!</li>
         </ul>
         </div>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="1500" data-rotate="180" data-scale="1">
+        <div class="highlight"><pre><span class="c1">// Read two files and write to third.</span>
+<span class="nx">async</span><span class="p">.</span><span class="nx">auto</span><span class="p">({</span>
+  <span class="nx">read1</span><span class="o">:</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file1</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">read2</span><span class="o">:</span>  <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file2</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">write3</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;read1&#39;</span><span class="p">,</span> <span class="s1">&#39;read2&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">read1</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span>
+               <span class="nx">results</span><span class="p">.</span><span class="nx">read2</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">file3</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+  <span class="p">}],</span>
+
+  <span class="nx">read3</span><span class="o">:</span>  <span class="p">[</span><span class="s1">&#39;write3&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file3</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+  <span class="p">}]</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">read3</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
     </div>
 
     <!--

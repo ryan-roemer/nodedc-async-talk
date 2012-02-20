@@ -110,7 +110,7 @@
     </div>
 
     <div class="step" data-x="-1000" data-y="3000" data-rotate="0" data-scale="1">
-        <h1>Control Flow</h1>
+        <h1>Serial Control Flow</h1>
         <div class="cont">
         <ul>
             <li>series</li>
@@ -209,6 +209,68 @@
 
     <div class="step chart" data-x="4000" data-y="4000" data-rotate="180" data-scale="1">
         <svg width="375.78709677419357px" height="435.6258064516129px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#666699"/><stop offset="100%" style="stop-color:#FFFFFF"/></linearGradient></defs><ellipse xmlns="http://www.w3.org/2000/svg" cx="179.52" cy="47.87" rx="47.87" ry="47.87" fill="url(#1)" stroke="#000000" stroke-width="1.196774193548387"/><path xmlns="http://www.w3.org/2000/svg" d="M 178.95 163.96 L 175.42 156.75 L 178.99 158.57 L 182.6 156.81 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 179.52 95.74 L 178.99 158.57" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="47.87" cy="215.42" rx="47.87" ry="47.87" fill="url(#1)" stroke="#000000" stroke-width="1.196774193548387"/><path xmlns="http://www.w3.org/2000/svg" d="M 178.95 331.51 L 175.42 324.3 L 178.99 326.12 L 182.6 324.36 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 179.52 263.29 L 178.99 326.12" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="179.52" cy="382.97" rx="47.87" ry="47.87" fill="url(#1)" stroke="#000000" stroke-width="1.196774193548387"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="179.52" cy="215.42" rx="47.87" ry="47.87" fill="url(#1)" stroke="#000000" stroke-width="1.196774193548387"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="323.13" cy="215.42" rx="47.87" ry="47.87" fill="url(#1)" stroke="#000000" stroke-width="1.196774193548387"/><path xmlns="http://www.w3.org/2000/svg" d="M 283.6 182.47 L 275.78 180.64 L 279.46 179.03 L 280.38 175.12 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 179.52 95.74 L 279.46 179.03" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 85.95 180.8 L 88.85 173.32 L 89.93 177.18 L 93.68 178.63 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 179.52 95.74 L 89.93 177.18" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 213.01 343.9 L 214.96 336.11 L 216.52 339.81 L 220.41 340.79 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 292.06 251.84 L 216.52 339.81" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 147.72 342.5 L 140.46 339.07 L 144.4 338.27 L 146.11 334.64 Z" fill="#000000" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 77.48 253.04 L 144.4 338.27" fill="none" stroke="#000000" stroke-width="3.5903225806451613" stroke-miterlimit="10"/></svg>
+    </div>
+
+    <div class="step" data-x="4000" data-y="2750" data-rotate="180" data-scale="1">
+        <h1>Parallel Control Flow</h1>
+        <div class="cont">
+        <ul>
+            <li>parallel</li>
+            <li>queue</li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="step slide" data-x="2750" data-y="2750" data-rotate="180" data-scale="1">
+        <div class="highlight"><pre><span class="kd">function</span> <span class="nx">readPrint</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Parallel.</span>
+<span class="nx">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span>
+  <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">readPrint</span><span class="p">,</span> <span class="nx">file1</span><span class="p">),</span>
+  <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">readPrint</span><span class="p">,</span> <span class="nx">file2</span><span class="p">)</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+    </div>
+
+    <div class="step" data-x="1500" data-y="2750" data-rotate="180" data-scale="1">
+        <h1>Collections</h1>
+        <div class="cont">
+        <ul>
+            <li>forEach | forEachSeries</li>
+            <li>map | mapSeries</li>
+            <li>filter | filterSeries</li>
+            <li>reduce | reduceRight</li>
+            <li>concat | concatSeries</li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="step slide" data-x="1500" data-y="1500" data-rotate="180" data-scale="1">
+        <div class="highlight"><pre><span class="kd">function</span> <span class="nx">readPrint</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Collection &quot;forEach&quot; iteration.</span>
+<span class="nx">async</span><span class="p">.</span><span class="nx">forEach</span><span class="p">([</span><span class="nx">file1</span><span class="p">,</span> <span class="nx">file2</span><span class="p">],</span> <span class="nx">readPrint</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// Mapped collection (also aggregates returned result).</span>
+<span class="nx">async</span><span class="p">.</span><span class="nx">map</span><span class="p">([</span><span class="nx">file1</span><span class="p">,</span> <span class="nx">file2</span><span class="p">],</span> <span class="nx">readPrint</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;File names: &quot;</span> <span class="o">+</span> <span class="nx">results</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
     </div>
 
     <!--

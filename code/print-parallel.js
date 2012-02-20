@@ -13,15 +13,10 @@ function readPrint(file, callback) {
   });
 }
 
-// Explicit parallel.
+// Parallel.
 async.parallel([
   async.apply(readPrint, file1),
   async.apply(readPrint, file2)
 ], function (err) {
-  if (err) throw err;
-});
-
-// ... or mapped collection.
-async.map([file1, file2], readPrint, function (err) {
   if (err) throw err;
 });

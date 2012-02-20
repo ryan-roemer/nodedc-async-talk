@@ -202,7 +202,8 @@ body     { pointer-events: none; }
 }
 
 #title h1,
-#topic h1 {
+#topic h1,
+.step h1 {
     font-size: 190px;
 
     -webkit-transform: translateZ(50px);
@@ -214,6 +215,10 @@ body     { pointer-events: none; }
 
 #topic h1 {
     font-size: 100px;
+    text-align: center;
+}
+.step h1 {
+    font-size: 80px;
     text-align: center;
 }
 
@@ -472,6 +477,17 @@ body     { pointer-events: none; }
 
 .step q strong {
     white-space: nowrap;
+}
+.step div.cont {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+.step ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+    list-style-type: disc;
 }
 
 

@@ -6,17 +6,19 @@ var fs = require('fs'),
   file1 = "file1.txt",
   file2 = "file2.txt";
 
-function readPrint(file, callback) {
-  fs.readFile(file, function (err, data) {
-    console.log(data.toString());
-    callback(err);
-  });
-}
-
 // Parallel.
-async.parallel([
-  async.apply(readPrint, file1),
-  async.apply(readPrint, file2)
-], function (err) {
+async.parallel({
+  read1: function (cb) {
+    fs.readFile(file1, cb);
+  },
+
+  read2: function (cb) {
+    fs.readFile(file2, cb);
+  }
+}, function (err, results) {
   if (err) throw err;
+
+  // Our results object with named members.
+  console.log(results.read1.toString() +
+              results.read2.toString());
 });

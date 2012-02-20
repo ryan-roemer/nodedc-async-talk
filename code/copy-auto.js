@@ -7,29 +7,26 @@ var fs = require('fs'),
   file2 = "file2.txt",
   file3 = "file3.txt";
 
-// Read 2 files and write to third.
+// Read two files and write to third.
 async.auto({
-  readFile1:  function (cb) {
+  read1:  function (cb) {
     fs.readFile(file1, cb);
   },
 
-  readFile2:  function (cb) {
+  read2:  function (cb) {
     fs.readFile(file2, cb);
   },
 
-  writeFile3: ['readFile1', 'readFile2', function (cb, results) {
-    var data = results.readFile1.toString() +
-               results.readFile2.toString();
+  write3: ['read1', 'read2', function (cb, results) {
+    var data = results.read1.toString() +
+               results.read2.toString();
     fs.writeFile(file3, data, cb);
   }],
 
-  readFile3:  ['writeFile3', function (cb) {
+  read3:  ['write3', function (cb) {
     fs.readFile(file3, cb);
-  }],
-
-  display:    ['readFile3', function (cb, results) {
-    console.log(results.readFile3.toString());
   }]
-}, function (err) {
+}, function (err, results) {
   if (err) throw err;
+  console.log(results.read3.toString());
 });

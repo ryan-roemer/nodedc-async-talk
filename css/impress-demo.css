@@ -517,3 +517,22 @@ code {
 .slide code {
     color: #000000;
 }
+
+.chart {
+    text-align: center;
+}
+
+/* Circles (from http://stackoverflow.com/questions/4840736/easier-way-to-create-circle-div-than-using-an-image) */
+.circle-base {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+}
+
+.circle-100 {
+    width: 100px;
+    height: 100px;
+    background: #000099;
+    border: 1px solid #333333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}

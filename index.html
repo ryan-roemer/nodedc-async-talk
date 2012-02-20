@@ -94,7 +94,12 @@
 </div>
     </div>
 
-    <div id="topic" class="step" data-x="0" data-y="1750" data-rotate="90" data-scale="1">
+    <div id="ing" class="step" data-x="0" data-y="1750" data-rotate="90" data-scale="1">
+        <p>Isn't this a bit <b class="rotating">frustrating</b> and
+        <b class="scaling">complicated?</b></p>
+    </div>
+
+    <div id="topic" class="step" data-x="0" data-y="3000" data-rotate="90" data-scale="1">
         <h1>async.js</h1>
         <p>
             A control-flow library for <br />
@@ -105,11 +110,11 @@
         </p>
     </div>
 
-    <div class="step chart" data-x="0" data-y="3000" data-rotate="90" data-scale="1">
+    <div class="step chart" data-x="-1000" data-y="3000" data-rotate="0" data-scale="1">
         <svg width="99px" height="430px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#666699"/><stop offset="100%" style="stop-color:#FFFFFF"/></linearGradient></defs><ellipse xmlns="http://www.w3.org/2000/svg" cx="47.5" cy="46.5" rx="47" ry="47" fill="url(#1)" stroke="#000000" stroke-width="1.1749999999999998"/><path xmlns="http://www.w3.org/2000/svg" d="M 46.94 160.25 L 43.26 152.72 L 46.99 154.63 L 50.76 152.78 Z" fill="#000000" stroke="#000000" stroke-width="3.525" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 47.5 93.5 L 46.99 154.63" fill="none" stroke="#000000" stroke-width="3.525" stroke-miterlimit="10"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="47.5" cy="211" rx="47" ry="47" fill="url(#1)" stroke="#000000" stroke-width="1.1749999999999998"/><path xmlns="http://www.w3.org/2000/svg" d="M 46.94 324.75 L 43.26 317.22 L 46.99 319.13 L 50.76 317.28 Z" fill="#000000" stroke="#000000" stroke-width="3.525" stroke-miterlimit="10"/><path xmlns="http://www.w3.org/2000/svg" d="M 47.5 258 L 46.99 319.13" fill="none" stroke="#000000" stroke-width="3.525" stroke-miterlimit="10"/><ellipse xmlns="http://www.w3.org/2000/svg" cx="47.5" cy="375.5" rx="47" ry="47" fill="url(#1)" stroke="#000000" stroke-width="1.1749999999999998"/></svg>
     </div>
 
-    <div class="step" data-x="-1000" data-y="3000" data-rotate="0" data-scale="1">
+    <div class="step" data-x="-1000" data-y="4000" data-rotate="0" data-scale="1">
         <h1>Serial Control Flow</h1>
         <div class="cont">
         <ul>
@@ -120,7 +125,7 @@
         </div>
     </div>
 
-    <div class="step slide" data-x="-1000" data-y="4000" data-rotate="0" data-scale="1">
+    <div class="step slide" data-x="250" data-y="4000" data-rotate="0" data-scale="1">
         <div class="highlight"><pre><span class="kd">var</span> <span class="nx">readData</span><span class="p">;</span> <span class="c1">// Chained data object.</span>
 
 <span class="c1">// Straight series.</span>
@@ -151,12 +156,12 @@
 </pre></div>
     </div>
 
-    <div class="step" data-x="250" data-y="4000" data-rotate="0" data-scale="1">
+    <div class="step" data-x="1500" data-y="4000" data-rotate="0" data-scale="1">
         <p><b>Pitfall</b>: Out-of-order execution <br />
         and chained objects.</p>
     </div>
 
-    <div class="step slide" data-x="1500" data-y="4000" data-rotate="0" data-scale="1">
+    <div class="step slide" data-x="2750" data-y="4000" data-rotate="0" data-scale="1">
         <div class="highlight"><pre><span class="c1">// Now with waterfall...</span>
 <span class="nx">async</span><span class="p">.</span><span class="nx">waterfall</span><span class="p">([</span>
   <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>

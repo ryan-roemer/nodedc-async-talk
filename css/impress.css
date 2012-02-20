@@ -255,7 +255,8 @@ body     { pointer-events: none; }
 }
 
 #ing {
-    width: 500px;
+    font-size: 64px;
+    width: 640px;
 }
 
 #ing b {
@@ -288,19 +289,19 @@ body     { pointer-events: none; }
     -o-transform:      rotate(-10deg);
     transform:         rotate(-10deg);
 
-    -webkit-transition-delay: 1.75s;
-    -moz-transition-delay:    1.75s;
-    -ms-transition-delay:     1.75s;
-    -o-transition-delay:      1.75s;
-    transition-delay:         1.75s;
+    -webkit-transition-delay: 1s;
+    -moz-transition-delay:    1s;
+    -ms-transition-delay:     1s;
+    -o-transition-delay:      1s;
+    transition-delay:         1s;
 }
 
 #ing.active .scaling {
-    -webkit-transform: scale(0.7);
-    -moz-transform:    scale(0.7);
-    -ms-transform:     scale(0.7);
-    -o-transform:      scale(0.7);
-    transform:         scale(0.7);
+    -webkit-transform: scale(1.7);
+    -moz-transform:    scale(1.7);
+    -ms-transform:     scale(1.7);
+    -o-transform:      scale(1.7);
+    transform:         scale(1.7);
 
     -webkit-transition-delay: 2s;
     -moz-transition-delay:    2s;
@@ -328,7 +329,7 @@ body     { pointer-events: none; }
 }
 
 #source q {
-    font-size: 60px;
+    font-size: 64px;
 }
 
 /* it's in 3D */

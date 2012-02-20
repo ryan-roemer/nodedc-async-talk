@@ -6,23 +6,18 @@ var fs = require('fs'),
   file1 = "file1.txt",
   file2 = "file2.txt";
 
-var readData; // Chained data object.
-
-// Straight series.
-async.series([
+// Now with waterfall...
+async.waterfall([
   function (cb) {
     path.exists(file1, function (exists) {
       cb(exists ? null : new Error("No file!"));
     });
   },
   function (cb) {
-    fs.readFile(file1, function (err, data) {
-      readData = data;
-      cb(err);
-    });
+    fs.readFile(file1, cb); // Pass cb directly.
   },
-  function (cb) {
-    fs.writeFile(file2, readData, cb);
+  function (data, cb) { // "data" now first arg.
+    fs.writeFile(file2, data, cb);
   },
   function (cb) {
     fs.readFile(file2, function (err, data) {

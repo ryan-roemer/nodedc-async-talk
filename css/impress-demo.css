@@ -435,6 +435,20 @@ body     { pointer-events: none; }
     cursor: pointer;
 }
 
+#thanks h1 {
+    font-size: 100px;
+    margin-bottom: 24px;
+}
+#thanks p {
+    font-size: 34px;
+    line-height: 1.7;
+}
+#thanks div.rule {
+    margin: 20px 0px;
+    text-align: center;
+    border-top: 2px solid #cccccc;
+}
+
 /*
  * SLIDE STEP STYLES
  *
